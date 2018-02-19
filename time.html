@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    m = checkTime(m);
+    if (h < 12) {
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + " AM"
+    } else {
+    document.getElementById('txt').innerHTML =
+    (h - 12) + ":" + m + " PM"}
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<p><strong>Note: </strong> This page runs on your device's date and time.</p>
+<div id="txt"></div>
+
+</body>
+</html>
